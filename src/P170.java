@@ -8,21 +8,18 @@ public class P170 {
         int stones = sc.nextInt();
         while (stones != 0) {
 
-            int sides = 1;
-            int quant = 1;
-            int remain = 0;
-
-            while (quant < stones) {
+            int sides = 0;
+            while (stones > 0) {
                 sides++;
-                quant += sides;
+                stones -= sides;
             }
 
-            if (quant != stones) {
-                remain = stones-quant-sides;
+            if (stones < 0) {
+                stones += sides;
                 sides--;
             }
 
-            System.out.println(sides + " " + remain);
+            System.out.println(sides + " " + stones);
             stones = sc.nextInt();
 
         }
